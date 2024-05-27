@@ -1,0 +1,49 @@
+
+html {
+  font-size: 62.5%;
+}
+
+html,body {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.root {
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  display: inline-block;
+  height: 50%;
+  margin: 5rem 30%;
+}
+
+.container label {
+  display: block;
+  font-size: 2rem;
+  color: lightseagreen;
+}
+.container button {
+  margin-left: 3rem;
+  padding: 1rem;
+  width: 10rem;
+  background-color: magenta;
+  border: none;
+  border-radius: 0.4rem;
+  color: white;
+  cursor: pointer;
+}
+
+.container input {
+  height: 8rem;
+  width: 45rem;
+  border: solid green;
+  border-radius: 0.5rem;
+  padding: 0;
+}
