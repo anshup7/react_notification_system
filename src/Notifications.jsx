@@ -9,11 +9,13 @@ import "./css/notifications.css";
  * Also this component will send the notification to its parent once its time
  * has come to get killed.
  */
-export default function Notifications({message, index, handleClearNotification}) {
+export default function Notifications({
+    message, index, 
+    handleClearNotification, horizontalPosition="left", verticalPosition="top"}) {
     useEffect(() => {
         const timeout = setTimeout(() => {
             handleClearNotification(message.key);
-        }, 15_000) // After 15 seconds attempt to kill!
+        }, Math.floor((Math.random() + 1) * 4000)) // After 15 seconds attempt to kill!
         return () => {
             console.log("clearing", timeout);
             clearTimeout(timeout);
@@ -24,8 +26,8 @@ export default function Notifications({message, index, handleClearNotification})
         <div style=
             {{
             position: "absolute",
-            top: ((index * 5) * 1.5)+"rem",
-            right: "75rem",
+            [verticalPosition]: ((index * 5) * 1.5)+"rem",
+            [(horizontalPosition == "right") ? "left" : "right"]: "80vw",
             width: "30rem",
             height: "5rem",
             zIndex: 9999999,

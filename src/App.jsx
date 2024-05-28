@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Notifications from './Notifications';
-import messageKillProxy from './utilities/messageKillProxy.js';
 
 function App() {
   // The array is only level 1 hence using simple copy should be fine
@@ -38,8 +37,10 @@ function App() {
   return (
       <div className="container">
         <label htmlFor="notification_message">Notification Message</label>
-        <input type="text" name="notification_message" ref={inputRef}/>
-        <button className="send-button" onClick={handleSend}>Send</button>
+        <div>
+          <textarea name="notification_message" ref={inputRef}></textarea>
+          <button className="send-button" onClick={handleSend}>Send</button>
+        </div>
         {
           notificationMessages.map((obj, index) => 
           <Notifications key={obj.key} message={obj} 

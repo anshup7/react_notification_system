@@ -18,10 +18,15 @@ html,body {
 }
 
 .container {
-  position: relative;
   display: inline-block;
   height: 50%;
   margin: 5rem 30%;
+}
+
+.container div {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
 }
 
 .container label {
@@ -30,9 +35,10 @@ html,body {
   color: lightseagreen;
 }
 .container button {
-  margin-left: 3rem;
+  /* margin: 1rem 1rem; */
   padding: 1rem;
   width: 10rem;
+  height: 4rem;
   background-color: magenta;
   border: none;
   border-radius: 0.4rem;
@@ -40,10 +46,19 @@ html,body {
   cursor: pointer;
 }
 
-.container input {
+.container textarea {
   height: 8rem;
   width: 45rem;
-  border: solid green;
+  border: solid darkgrey;
   border-radius: 0.5rem;
   padding: 0;
+}
+
+.container textarea[type="text"] {
+  padding-inline: -1px;
+  display: start;
+  padding: 0 0 5rem 0;
+  font-size: 2rem;
+  color: darkslategray;
+  overflow-x: scroll;
 }
